@@ -462,6 +462,18 @@ footer .copyright span{
     width: 30px;
 }
 
+.mobile-nav img{
+    display: none;
+}
+
+.branding img{
+    display: none;
+}
+
+footer a img.footer-logo{
+    display: none;
+}
+
 .mobile-nav ul{
     list-style-type: none;
     margin-top: 3rem;
