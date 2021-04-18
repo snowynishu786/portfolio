@@ -7,6 +7,11 @@
     --light: #2F2F2F;
     --secondary: #070606;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Dancing Script', cursive;
 }
@@ -26,6 +31,30 @@ header {
     max-width: 1152px;
     padding: 0 15px;
     margin: 0 auto;
+}
+
+@media (min-width: 576px){
+    .container{
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px){
+    .container{
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px){
+    .container{
+        max-width: 900px;
+    }
+}
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1152px;
+    }
 }
 
 header nav .left a{
@@ -61,7 +90,7 @@ header nav .branding{
 
 .hero .right {
     color: var(--pure);
-    margin-top: -7rem;
+    margin-top: 2rem;
 }
 
 .hero .right h6{
@@ -91,6 +120,10 @@ header nav .branding{
 
 section{
     padding: 6rem 0;
+}
+
+section.about{
+    margin-bottom: 7rem;
 }
 
 section.about .about-me-img{
@@ -377,30 +410,159 @@ footer .copyright span{
     color: var(--primary);
 }
 
-/*section.about .social{
-    display: flex;
+.site-main-wrapper{
+    position: relative;
 }
 
-section.about .social a{
-    background: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    margin-right: 0.6rem;
-    transition: all .3s ease;
+.hamberger{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 11;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: none;
 }
 
-section.about .social a:hover{
-    background-image: url(../images/circle.jpg);
+.hamberger img{
+    width: 30px;
 }
 
-section.about .social a img{
+.mobile-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    background: var(--light);
     width: 100%;
     height: 100%;
-    padding: 0.5rem;
-    color: var(--primary);
+    padding: 2rem;
+    padding: 5rem;
+    transform: translateX(-100%);
+    transition: all .5s ease-in-out;
 }
-*/
+
+.open{
+    transform: translateX(0);
+}
+
+.times{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.times img{
+    width: 30px;
+}
+
+.mobile-nav ul{
+    list-style-type: none;
+    margin-top: 3rem;
+}
+
+.mobile-nav ul li{
+    margin-bottom: 1rem;
+}
+
+.mobile-nav ul li a{
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+@media (max-width: 576px){
+    header #main-nav{
+        display: none;
+    }
+
+    .hamberger{
+        display: block;
+    }
+
+    .hero .left img{
+        width: 200px;
+    }
+    .hero .right h1{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    header{
+        height: 400px;
+        clip-path: polygon(0 0,100% 0, 100% 100%, 27% 89%, 0 100%);
+        margin-bottom:0.01rem;
+    }
+    .hero .right h6{
+        font-size: 1rem;
+    }
+    .hero .right p{
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    .about-inner-wrap{
+        flex-direction: column;
+    }
+    section.about .about-me-img{
+        height: 300px;
+        margin-bottom: 2rem;
+    }
+    section.about .right{
+        text-align: center;
+    }
+    section.about h1{
+        font-size: 2rem;
+    }
+    section.about h3{
+        font-size: 1.5rem;
+    }
+    section.about p{
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+    }
+    section.about{
+        height: 620px;
+    }
+    section.about .right .social{
+        justify-content: center;
+    }
+    section.services .card-wrapper{
+        grid-template-columns: 1fr;
+        grid-row-gap: 4rem;
+    }
+    section.services .card-wrapper .card{
+        margin: 0 3rem;
+    }
+    section.sem{
+        height: 900px;
+    }
+    section.sem h1{
+        font-size: 2rem;
+        margin-bottom: 4rem;
+    }
+    section.sem .table .cell h2{
+        font-size: 1rem;
+    }
+    section.sem .table .mobile-cell{
+        display: none;
+    }
+    section.sem .table{
+        grid-template-columns: 1fr;
+        grid-row-gap: 1.5rem;
+    }
+    section.contact .card-wrapper{
+        grid-template-columns: 1fr;
+        grid-row-gap: 0.1rem;
+    }
+    section.contact .card-wrapper .card h6{
+        font-size: 1.3rem;
+    }
+    section.contact form .input-wrap{
+        grid-template-columns: 1fr;
+    }
+}
