@@ -462,7 +462,7 @@ footer .copyright span{
     width: 30px;
 }
 
-.mobile-nav img{
+.mobile-nav img.none{
     display: none;
 }
 
