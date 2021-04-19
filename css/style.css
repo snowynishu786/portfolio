@@ -58,7 +58,7 @@ header {
     }
 }
 
-header nav .left a{
+.container nav .left a{
     color: var(--pure);
     text-decoration: none;
     margin-right: 2rem;
@@ -69,29 +69,47 @@ header nav .left a{
     -o-transition: all .3s;
 }
 
-header nav .left a:hover{
+.container nav .left a:hover{
     color: var(--primary);
 }
 
-header nav {
-    padding: 2rem 0;
+.container nav{
+    width: 100%;
+    margin-left: -11%;
 }
 
-header nav .branding{
+.container nav {
+    padding: 2rem 0;
+    z-index: 999;
+    width: 100%;
+    position: fixed;
+    background-color: var(--dark);
+    padding: 0px;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    margin-bottom: px;
+    justify-content: space-between;
+}
+
+.container nav .branding{
     margin-right: 3rem;
 }
 
 .hero{
     padding: 3rem 0;
+    margin-top: rem;
 }
 
 .hero .left img{
     width: 400px;
+    margin-top: 5rem;
 }
 
 .hero .right {
     color: var(--pure);
-    margin-top: 2rem;
+    margin-top: 8rem;
 }
 
 .hero .right h6{
@@ -487,6 +505,10 @@ footer .copyright span{
         display: none;
     }
 
+    .container nav{
+        display: none;
+    }
+
     .hamberger{
         display: block;
     }
@@ -504,7 +526,7 @@ footer .copyright span{
         margin-top: 1rem;
     }
     header{
-        height: 500px;
+        height:460px;
         clip-path: polygon(0 0,100% 0, 100% 100%, 27% 89%, 0 100%);
         margin-bottom:0.01rem;
     }
