@@ -310,6 +310,72 @@ section.sem .table .cell:hover{
     color: var(--dark);
 }
 
+section.skills{
+    background-color: var(--primary);
+}
+
+section.skills h1{
+    font-size: 3rem;
+}
+
+section.skills .card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+    margin-top: 5rem;
+}
+
+section.skills .card h2{
+    background-color: var(--pure);
+    color: var(--dark);
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+section.skills .card-wrapper .card{
+    text-align: center;
+    background-color: var(--dark);
+    color: var(--pure);
+    clip-path: polygon(0 10%, 10% 0, 90% 0, 100% 10%, 100% 90%,90% 100%, 10% 100%, 0 90%);
+    transition: all .3s ease;
+}
+
+section.skills .card-wrapper .card ul{
+    list-style-type: none;
+}
+
+section.skills .card-wrapper .card ul li{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+section.skills .card-wrapper .card ul li h3{
+    margin-bottom: 1rem;
+}
+
+section.skills .card-wrapper .card ul li dd{
+    margin-bottom: 1.3rem;
+}
+
+section.skills .card-wrapper .card h2{
+    font-size: 2rem;
+}
+
+section.skills .card-wrapper .card p{
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+section.skills .card-wrapper .card:hover{
+    background-color: var(--pure);
+    color: var(--primary);
+}
+
+section.skills .card-wrapper .card h2:hover{
+    background-color: var(--dark);
+    color: var(--pure);
+}
+
 section.contact .card-wrapper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -599,6 +665,14 @@ footer .copyright span{
     }
     section.contact form .input-wrap{
         grid-template-columns: 1fr;
+    }
+    section.skills .card-wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 3rem;
+    }
+    section.skills .card-wrapper .card{
+        margin: 0 2rem;
     }
 }
 
