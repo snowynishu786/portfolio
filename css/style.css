@@ -323,7 +323,7 @@ section.skills .card-wrapper{
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 3rem;
     margin-top: 5rem;
-    grid-row-gap: 3rem;
+    grid-row-gap: 4rem;
 }
 
 section.skills .card h2{
