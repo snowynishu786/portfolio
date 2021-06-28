@@ -15,6 +15,7 @@ html{
 
 body{
     font-family: 'Dancing Script', cursive;
+    overflow-x: hidden;
 }
 *{
     padding: 0;
@@ -27,6 +28,11 @@ header {
     height: 800px;
     width: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 85%, 0 100%);
+    border-left: 1rem solid var(--primary);
+    border-right: 1rem solid var(--primary);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/IMG_4983.jpg);
+    background-position: center;
+    background-size: cover;
 }
 .container {
     max-width: 1152px;
@@ -67,6 +73,7 @@ header {
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -o-transition: all .3s;
+    display: inline-block;
 }
 
 .container nav .left a:hover{
@@ -75,7 +82,7 @@ header {
 
 .container nav{
     width: 100%;
-    margin-left: -11%;
+    margin-left: -11.01%;
 }
 
 .container nav {
@@ -97,6 +104,24 @@ header {
     margin-right: 3rem;
 }
 
+.cool-link::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width .5s;
+}
+
+.cool-link:hover:after{
+    width: 100%;
+    transition: width .5s;
+}
+
+header img{
+    position: fixed;
+}
+
 .hero{
     padding: 3rem 0;
     margin-top: rem;
@@ -104,7 +129,7 @@ header {
 
 .hero .left img{
     width: 400px;
-    margin-top: 5rem;
+    margin-top: -5rem;
 }
 
 .hero .right {
@@ -147,6 +172,8 @@ section.about{
 
 section.about .about-me-img{
     height: 450px;
+    background-position: center;
+    background-size: cover;
 }
 
 section.about h1{
@@ -186,7 +213,7 @@ section.about .social a{
     height: 35px;
     border-radius: 50%;
     margin-right: 0.6rem;
-    transition: all .3s ease;
+    transition: .5s;
 }
 
 section.about .social a:hover{
@@ -244,7 +271,7 @@ section.services .card-wrapper .card img{
     position: absolute;
     top: -2.0rem;
     left: 50%; 
-    transform: translateX(-50%);
+    transform: translate(-50%);
 
 }
 
@@ -265,49 +292,55 @@ section.services .card-wrapper .card:hover h2, section.services .card-wrapper .c
     color: var(--primary);
 }
 
-section.sem {
-    height: 1000px;
-    background: var(--pure);
-    font-family: cursive;
-    margin: 5rem 2rem;
+section.photo{
+    height: 850px;
 }
 
-section.sem h1{
-    text-align: center;
-    color: var(--dark);
-    font-size: 4rem;
-    background: var(--primary);
-    clip-path: polygon(0 50%, 10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%);
+section.photo h1{
+    font-size: 2.5rem;
 }
 
-section.sem .table{
+section.photo .card-wrapper{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-row-gap: 0.1rem;
-    background: var(--pure);
-    color: var(--primary);
-    margin-top: 2rem;
+    grid-column-gap: 2rem;
+    grid-row-gap: 3rem;
+    margin: 4rem;
+    margin-top: 5rem;
+    margin-right: 1rem;
+}
+
+section.photo .card-wrapper .card{
+    width: 150px;
+    position: relative;
+}
+
+section.photo .card-wrapper .card img{
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border: 1rem solid var(--dark);
+    transition: .5s;
+}
+
+section.photo .card-wrapper .card img:hover{
+    border-radius: 1rem;
+    border: 1rem solid var(--primary);
+}
+
+section.photo .insta{
     text-align: center;
+    margin-top: 3rem;
 }
 
-section.sem .table .cell{
-    background: var(--dark);
-    transition: all .3s ease;
+section.photo .insta span a{
+    color: var(--primary);
+    text-decoration: none;
+    transition: .5s;
 }
 
-section.sem .table .cell h2{
-    margin: 2rem 2rem;
-}
-
-section.sem .table .cell p{
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-}
-
-section.sem .table .cell:hover{
-    background: var(--primary);
-    color: var(--dark);
+section.photo .insta span a:hover{
+    color: var(--ternary);
 }
 
 section.skills{
@@ -357,6 +390,7 @@ section.skills .card-wrapper .card{
 section.skills .card-wrapper .card h2{
     font-size: 2rem;
     margin-bottom: 4rem;
+    transition: .3s;
 }
 
 section.skills .card-wrapper .card:hover{
@@ -367,6 +401,47 @@ section.skills .card-wrapper .card:hover{
 section.skills .card-wrapper .card h2:hover{
     background-color: var(--dark);
     color: var(--pure);
+}
+
+section.projects{
+    background: var(--light);
+    height: 1200px;
+}
+
+section.projects a{
+    color: var(--pure);
+    text-decoration: none;
+    text-align: center;
+    font-size: 2rem;
+    transition: .5s;
+    justify-content: center;
+    margin-left: 6rem;
+}
+
+section.projects a:hover{
+    color: var(--primary);
+}
+
+section.projects .card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 6rem;
+    margin-top: 3rem;
+}
+
+section.projects .card-wrapper .card{
+    width: 200px;
+}
+
+section.projects .card-wrapper .card img{
+    width: 400px;
+    transition: .5s;
+}
+
+section.projects .card-wrapper .card img:hover{
+    width: 500px;
+    position: absolute;
+    z-index: 1;
 }
 
 section.contact .card-wrapper{
@@ -514,7 +589,7 @@ footer .copyright span{
     left: 0;
     z-index: 1001;
     background: var(--light);
-    width: 100%;
+    width: 350px;
     height: 100%;
     padding: 2rem;
     padding: 5rem;
@@ -546,7 +621,8 @@ footer .copyright span{
 
 .mobile-nav ul{
     list-style-type: none;
-    margin-top: 3rem;
+    margin-top: -2rem;
+    margin-left: -2rem;
 }
 
 .mobile-nav ul li{
@@ -572,6 +648,11 @@ footer .copyright span{
         display: block;
     }
 
+    .mobile-nav{
+        width: 100%;
+        height: 450px;
+    }
+
     .hero .left img{
         width: 200px;
     }
@@ -581,7 +662,7 @@ footer .copyright span{
     .hero .right h1{
         font-size: 1.5rem;
         margin-bottom: 1rem;
-        margin-left: -2rem;
+        margin-left: 2rem;
         margin-top: 1rem;
     }
     header{
@@ -595,7 +676,7 @@ footer .copyright span{
     .hero .right p{
         font-size: 1rem;
         line-height: 1.4;
-        margin-left: -7rem;
+        margin-left: -1rem;
         margin-top: 1rem;
         text-align: center;
     }
@@ -632,22 +713,20 @@ footer .copyright span{
     section.services .card-wrapper .card{
         margin: 0 3rem;
     }
-    section.sem{
-        height: 900px;
+    section.photo{
+        height: 1250px;
     }
-    section.sem h1{
-        font-size: 2rem;
-        margin-bottom: 4rem;
+    section.photo .card-wrapper{
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 2rem;
     }
-    section.sem .table .cell h2{
-        font-size: 1rem;
+    section.photo .card-wrapper .card{
+        width: 60px;
+        margin-left: 5%;
+        transform: translate(-50%);
     }
-    section.sem .table .mobile-cell{
-        display: none;
-    }
-    section.sem .table{
-        grid-template-columns: 1fr;
-        grid-row-gap: 1.5rem;
+    section.photo .card-wrapper .card img{
+        width: 190px;
     }
     section.contact .card-wrapper{
         grid-template-columns: 1fr;
@@ -666,6 +745,18 @@ footer .copyright span{
     }
     section.skills .card-wrapper .card{
         margin: 0 2rem;
+    }
+    section.projects{
+        height: 2100px;
+    }
+    section.projects .card-wrapper{
+        grid-template-columns: 1fr;
+        margin-left: 3rem;
+    }
+    section.projects .card-wrapper .card img:hover{
+        width: 400px;
+        position: relative;
+        z-index: 0;
     }
 }
 
