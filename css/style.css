@@ -405,7 +405,7 @@ section.skills .card-wrapper .card h2:hover{
 
 section.projects{
     background: var(--light);
-    height: 1500px;
+    height: 1900px;
 }
 
 section.projects a{
@@ -754,7 +754,7 @@ footer .copyright span{
         margin: 0 2rem;
     }
     section.projects{
-        height: 2700px;
+        height: 3500px;
     }
     section.projects a{
         margin-left: 4rem;
