@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link href="/aos/aos.css" rel="stylesheet">
 
 </head>
 <body>
@@ -92,7 +93,7 @@
         </header>
 
         <section id = "about" class = "about">
-            <div class="container flex items-center about-inner-wrap">
+            <div class="container flex items-center about-inner-wrap" data-aos="fade-up">
                 <div class = "flex-1">
                     <img  class = "about-me-img" src = "./images/IMG_8792.jpg">
                 </div>
@@ -380,6 +381,8 @@
         </footer>
     </div>
 
+    <script src="assets/vendor/aos/aos.js"></script>
+
     <script>
         let hamberger = document.querySelector('.hamberger');
         let times = document.querySelector('.times');
@@ -391,6 +394,16 @@
 
         times.addEventListener('click', function(){
             mobileNav.classList.remove('open');
+        });
+
+
+        window.addEventListener('load', () => {
+            AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+            })
         });
     </script>
 
